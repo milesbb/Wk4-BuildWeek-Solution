@@ -6,9 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Page</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <style>
+        body{
+            background-image: url("assets/bg.jpg");
+            margin: auto;
+            width: 50%;
+            padding: 5%;
+
+        }
+        
+        .checked{
+            color: orange;
+        }
+        #moreinfo{
+            display: block;
+        }
+        #comments{
+            border-width: 0 0 1px;
+        }
+       
+    </style>
     
 </head>
 <body>
+    <img width="100" src="assets/epicode_logo.png" alt="epicode_logo">
+    <h1>Tell us how it's going</h1>
+    <h3>From 0 to 10, how likely are you to recommend</h3>
+    <span class="ion-android-star"></span>
+    <span class="ion-android-star" ></span>
+    <span class="ion-android-star"></span>
+    <span ></span>
+    <span ></span>
+    <span ></span>
+    <span ></span>
+    <span ></span>
+    <h3>Leave us an open feedback about your experience so far</h3>
+    <input id="comments" value="Write your comment">
+    <button id="moreinfo">MORE INFO</button>
     <script src="./index.js"></script>
 </body>
 </html>
