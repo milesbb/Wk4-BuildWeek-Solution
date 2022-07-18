@@ -25,7 +25,54 @@
         #comments{
             border-width: 0 0 1px;
         }
-       
+        input{
+            background-color: none;
+        }
+        .box{
+            margin: auto;
+            direction: rtl;
+        }
+      .box a{
+        font-size: 40px;
+        color: #d20094;
+        transition: 0.3s all;
+      }
+      .box a:hover{
+        color: #00ffff;
+
+      }
+      .b0:hover ~ a{
+        color: #00ffff;
+      }
+      .b1:hover ~ a{
+        color: #00ffff;
+      }
+      .b2:hover ~ a{
+        color: #00ffff;
+      }
+      .b3:hover ~ a{
+        color: #00ffff;
+      }
+      .b4:hover ~ a{
+        color: #00ffff;
+      }
+      .b5:hover ~ a{
+        color: #00ffff;
+      }
+      .b6:hover ~ a{
+        color: #00ffff;
+      }
+      .b7:hover ~ a{
+        color: #00ffff;
+      }
+      .b8:hover ~ a{
+        color: #00ffff;
+      }  
+      .b9:hover ~ a{
+        color: #00ffff;
+      }
+      
+               
     </style>
     
 </head>
@@ -33,16 +80,20 @@
     <img width="100" src="assets/epicode_logo.png" alt="epicode_logo">
     <h1>Tell us how it's going</h1>
     <h3>From 0 to 10, how likely are you to recommend</h3>
-    <span class="ion-android-star"></span>
-    <span class="ion-android-star" ></span>
-    <span class="ion-android-star"></span>
-    <span ></span>
-    <span ></span>
-    <span ></span>
-    <span ></span>
-    <span ></span>
+    <div class="box">
+        <a class="ion-android-star b0"></a>
+        <a class="ion-android-star b1"></a>
+        <a class="ion-android-star b2"></a>
+        <a class="ion-android-star b3"></a>
+        <a class="ion-android-star b4"></a>
+        <a class="ion-android-star b5"></a>
+        <a class="ion-android-star b6"></a>
+        <a class="ion-android-star b7"></a>
+        <a class="ion-android-star b8"></a>
+        <a class="ion-android-star b9"></a>
+    </div>
     <h3>Leave us an open feedback about your experience so far</h3>
-    <input id="comments" value="Write your comment">
+    <input id="comments" value="Write your comment" >
     <button id="moreinfo">MORE INFO</button>
     <script src="./index.js"></script>
 </body>
