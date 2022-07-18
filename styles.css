@@ -72,14 +72,6 @@ body {
     font-weight: bold;
 }
 
-.promiseBox {
-    /* appearance: none;
-    background-color: transparent;
-    border: 2px solid white;
-    width: 15px;
-    height: 15px; */
-}
-
 .glowBlue {
     background-color: #00FFFF;
     color: black;
@@ -124,6 +116,11 @@ body {
     margin-right: 20px;
     color: white;
     font-size: 22px;
+    transition: background-color 0.1s;
+}
+
+.button:hover {
+    background-color: rgb(255,0,255, 0.5);
 }
 
 .qWrap {
