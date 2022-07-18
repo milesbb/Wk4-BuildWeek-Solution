@@ -1,7 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Outfit&display=swap');
+
 html, body {
     width: 100%;
     height: 100%;
     color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    justify-items: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 60px;
+}
+
+h1 {
+    font-weight: lighter;
+    font-size: 90px;
+    width: 50%;
+    line-height: 80px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #D20094;
+    margin-bottom: 0px;
+    font-size: 40px;
+    margin-top: 0px;
+}
+
+ul {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.logoImg {
+    width: 20%;
 }
 
 body {
@@ -11,4 +45,36 @@ body {
 
 .bold {
     font-weight: bold;
+}
+
+.introP {
+    width: 50%;
+    margin-top: 6px;
+}
+
+.welcomeNote {
+    justify-items: center;
+    width: 40%;
+    display: block;
+    margin: auto;
+}
+
+.instruDiv {
+    justify-items: center;
+    width: 80%;
+    display: block;
+    margin: auto;
+    
+}
+
+.promise {
+    font-weight: bold;
+}
+
+.promiseBox {
+
+}
+
+.logoImg {
+    margin-top: 60px;
 }
