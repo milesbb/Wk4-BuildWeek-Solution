@@ -36,6 +36,7 @@ ul {
 
 .logoImg {
     width: 20%;
+    margin-top: 60px;
 }
 
 body {
@@ -91,6 +92,7 @@ body {
     height: 60px;
     box-shadow: 0px 0px 0px 0px #00FFFF;
     transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .glowBlue:hover {
@@ -104,7 +106,53 @@ body {
 }
 
 
+.logoImg2 {
+    margin-top: 1px;
+    width: 20%;
+}
 
-.logoImg {
-    margin-top: 60px;
+
+.button {
+    background-color: rgb(211,211,211, 0.5);
+    width: 40%;
+    height: 70px;
+    display: inline-block;
+    justify-items: center;
+    border-radius: 50px;
+    margin: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+    font-size: 22px;
+}
+
+.qWrap {
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    justify-items: center;
+    text-align: center;
+}
+
+.buttonWrap {
+    width: 80%;
+    margin: auto;
+    justify-items: center;
+    display: block;
+}
+
+.questionText {
+    font-size: 65px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.questionCounter {
+    margin-top: 130px;
+}
+
+.purple {
+    color: #D20094;
+    font-weight: 800;
 }
