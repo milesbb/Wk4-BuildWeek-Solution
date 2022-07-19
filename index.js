@@ -21,6 +21,23 @@ const questions = [
   },
 ];
 
+// proceed button
+let checkboxNode = document.getElementById("checkbox");
+let buttonNode = document.getElementById("proceedPagePress");
+buttonNode.disabled= true;
+
+checkboxNode.addEventListener('change', (event)=> {
+buttonNode.disabled = !event.target.checked
+}
+)
+const proceedPagePressed = function(){
+  window.location.href = "questions.html"
+}
+//end proceed button 
+
+
+
+
 const buttons = document.getElementsByClassName("button");
 const questionT = document.getElementById("question");
 const counterShow = document.getElementById("counter");
@@ -91,3 +108,4 @@ var myInterval;
 function startTimer() {
   myInterval = setInterval(countdown, 1000);
 }
+
