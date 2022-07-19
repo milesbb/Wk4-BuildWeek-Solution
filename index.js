@@ -28,6 +28,8 @@ const counterShow = document.getElementById("counter");
 let score = 0;
 let qLog = 0;
 
+//sets questions and buttons
+
 const checkPosition = function () {
   for (let i = 0; i < questions.length; i++) {
     if (qLog > 3) {
@@ -60,32 +62,39 @@ for (let i = 0; i < questions.length; i++) {
   correct_answers[i] = questions[i].correctAnswer;
 }
 
+//sets even listeners for buttons
+
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function f(e) {
     if (correct_answers.indexOf(e.target.value) == -1) {
       qLog++;
+      counttime = 20;
       checkPosition();
     } else {
       score++;
       qLog++;
+      counttime = 20;
       checkPosition();
     }
   });
 }
 
-const timer = document.getElementById("timer");
-let counttime = 20;
+//Timer Code
+
+const timerText = document.getElementById("timerText");
+let counttime = 21;
 
 function countdown() {
-  timer.innerText = counttime.toString();
   counttime--;
-  if (counttime < 0) {
+  if (counttime < 1) {
     clearInterval(myInterval);
     qLog++;
-    counttime = 20
+    counttime = 20;
     checkPosition();
   }
+  timerText.innerText = counttime.toString();
 }
+
 countdown();
 var myInterval;
 function startTimer() {
