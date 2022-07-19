@@ -67,14 +67,10 @@ for (let i = 0; i < questions.length; i++) {
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function f(e) {
     if (correct_answers.indexOf(e.target.value) == -1) {
-      qLog++;
-      counttime = 20;
-      checkPosition();
+      counttime = 0;
     } else {
       score++;
-      qLog++;
-      counttime = 20;
-      checkPosition();
+      counttime = 0;
     }
   });
 }
