@@ -51,6 +51,7 @@ window.onload = function(){
   
 }
 
+//sets questions and buttons
 
 const checkPosition = function () {
   for (let i = 0; i < questions.length; i++) {
@@ -86,36 +87,35 @@ for (let i = 0; i < questions.length; i++) {
   correct_answers[i] = questions[i].correctAnswer;
 }
 
+//sets even listeners for buttons
+
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function f(e) {
     if (correct_answers.indexOf(e.target.value) == -1) {
-      console.log("test")
-      qLog++;
-      console.log(score)
-      checkPosition();
+      counttime = 0;
     } else {
-      console.log("test")
       score++;
-      console.log(score)
-      qLog++;
-      checkPosition();
+      counttime = 0;
     }
   });
 }
 
-let timer = document.getElementById("timer");
-let counttime = 20;
+//Timer Code
+
+const timerText = document.getElementById("timerText");
+let counttime = 21;
 
 function countdown() {
-  timer  = counttime.toString();
   counttime--;
-  if (counttime < 0) {
+  if (counttime < 1) {
     clearInterval(myInterval);
     qLog++;
-    counttime = 20
+    counttime = 20;
     checkPosition();
   }
+  timerText.innerText = counttime.toString();
 }
+
 countdown();
 var myInterval;
 function startTimer() {
