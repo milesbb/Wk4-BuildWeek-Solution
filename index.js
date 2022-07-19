@@ -24,30 +24,32 @@ const questions = [
 const buttons = document.getElementsByClassName("button");
 let questionT = document.getElementById("question");
 let counterShow = document.getElementById("counter");
+
 let score = 0;
 let qLog = 0;
 
-const calculatePrecntges = function() {
-  const amountAnswerd1 =document.getElementById("amountAnswerd")
-  const amountUnAnswerd1 =document.getElementById("amountUnAnswerd")
-  const correctAnswersPrecntage = document.getElementById("correctPrecentge")
-  const incorrectAnswersPrecntage = document.getElementById("incorrectPrecentage")
+const calculatePercentages = function() {
+  const amountAnswered1 = document.getElementById("amountAnswered")
+  const amountUnAnswered1 = document.getElementById("amountUnAnswered")
+  const correctAnswersPercentage = document.getElementById("correctPercentage")
+  const incorrectAnswersPercentage = document.getElementById("incorrectPercentage")
+
   let correctAnswers = (score.toString() + "/" + questions.length.toString())  
   let incorrectAnswers = ( questions.length - score).toString() + "/" + questions.length.toString() 
-  let correctPrecntage1 = ((score * 100) / questions.length).toString() + "%" ;
-  let incorrectPrecntage1  = (((questions.length - score) * 100) / questions.length).toString() + "%" ;
+  let correctPercentage1 = ((score * 100) / questions.length).toString() + "%" ;
+  let incorrectPercentage1  = (((questions.length - score) * 100) / questions.length).toString() + "%" ;
   
-  incorrectAnswersPrecntage.innerText = incorrectPrecntage1;
-  correctAnswersPrecntage.innerText = correctPrecntage1;
-  amountAnswerd1.innerText = correctAnswers + " questions";
-  amountUnAnswerd1.innerText = incorrectAnswers + " questions";
+  incorrectAnswersPercentage.innerText = incorrectPercentage1;
+  correctAnswersPercentage.innerText = correctPercentage1;
+  amountAnswered1.innerText = correctAnswers + " questions";
+  amountUnAnswered1.innerText = incorrectAnswers + " questions";
 } 
 
 
 
 
 window.onload = function(){
-  calculatePrecntges()
+  calculatePercentages()
   
 }
 
@@ -58,7 +60,7 @@ const checkPosition = function () {
     if (qLog > 4) {
       window.location.href = "results.html";
       console.log(score)
-      calculatePrecntges()
+      calculatePercentages()
     } else {
       questionT.innerText = questions[qLog].questionText;
       counterShow.innerText = (qLog + 1).toString();
@@ -121,7 +123,6 @@ var myInterval;
 function startTimer() {
   myInterval = setInterval(countdown, 1000);
 }
-console.log(score)
 
 
 
