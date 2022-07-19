@@ -22,16 +22,42 @@ const questions = [
 ];
 
 const buttons = document.getElementsByClassName("button");
-const questionT = document.getElementById("question");
-const counterShow = document.getElementById("counter");
-
+let questionT = document.getElementById("question");
+let counterShow = document.getElementById("counter");
 let score = 0;
 let qLog = 0;
 
+const calculatePrecntges = function() {
+  const amountAnswerd1 =document.getElementById("amountAnswerd")
+  const amountUnAnswerd1 =document.getElementById("amountUnAnswerd")
+  const correctAnswersPrecntage = document.getElementById("correctPrecentge")
+  const incorrectAnswersPrecntage = document.getElementById("incorrectPrecentage")
+  let correctAnswers = (score.toString() + "/" + questions.length.toString())  
+  let incorrectAnswers = ( questions.length - score).toString() + "/" + questions.length.toString() 
+  let correctPrecntage1 = ((score * 100) / questions.length).toString() + "%" ;
+  let incorrectPrecntage1  = (((questions.length - score) * 100) / questions.length).toString() + "%" ;
+  
+  incorrectAnswersPrecntage.innerText = incorrectPrecntage1;
+  correctAnswersPrecntage.innerText = correctPrecntage1;
+  amountAnswerd1.innerText = correctAnswers + " questions";
+  amountUnAnswerd1.innerText = incorrectAnswers + " questions";
+} 
+
+
+
+
+window.onload = function(){
+  calculatePrecntges()
+  
+}
+
+
 const checkPosition = function () {
   for (let i = 0; i < questions.length; i++) {
-    if (qLog > 3) {
+    if (qLog > 4) {
       window.location.href = "results.html";
+      console.log(score)
+      calculatePrecntges()
     } else {
       questionT.innerText = questions[qLog].questionText;
       counterShow.innerText = (qLog + 1).toString();
@@ -63,21 +89,25 @@ for (let i = 0; i < questions.length; i++) {
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function f(e) {
     if (correct_answers.indexOf(e.target.value) == -1) {
+      console.log("test")
       qLog++;
+      console.log(score)
       checkPosition();
     } else {
+      console.log("test")
       score++;
+      console.log(score)
       qLog++;
       checkPosition();
     }
   });
 }
 
-const timer = document.getElementById("timer");
+let timer = document.getElementById("timer");
 let counttime = 20;
 
 function countdown() {
-  timer.innerText = counttime.toString();
+  timer  = counttime.toString();
   counttime--;
   if (counttime < 0) {
     clearInterval(myInterval);
@@ -91,3 +121,8 @@ var myInterval;
 function startTimer() {
   myInterval = setInterval(countdown, 1000);
 }
+console.log(score)
+
+
+
+
