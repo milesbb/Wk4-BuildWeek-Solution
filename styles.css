@@ -156,3 +156,22 @@ body {
     color: #D20094;
     font-weight: 800;
 }
+
+.feedbackWrap {
+    margin: auto;
+    justify-items: center;
+    text-align: center;
+    width: 80%;
+    display: block;
+}
+
+.logoImg4 {
+    width: 15%;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+.howGo {
+    text-align: center;
+    width: 100%;
+}
