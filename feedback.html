@@ -15,15 +15,16 @@
             padding: 5%;
 
         }
-        
-        .checked{
-            color: orange;
-        }
-        #moreinfo{
+        h3{
             display: block;
         }
+        
+       
+       
         #comments{
             border-width: 0 0 1px;
+            display: inline;
+            margin: auto;
         }
        
         .box{
@@ -78,6 +79,9 @@
       input:focus{
         outline: none;
       }
+      #moreinfo{
+            display: block;
+        }
                
     </style>
     
@@ -100,7 +104,7 @@
     </div>
     <h3>Leave us an open feedback about your experience so far</h3>
     <input id="comments" value="Write your comment" >
-    <button id="moreinfo">MORE INFO</button>
+    <button class="glowBlue proceedPos" >MORE INFO</button>
     <script src="./index.js"></script>
 </body>
 </html>
