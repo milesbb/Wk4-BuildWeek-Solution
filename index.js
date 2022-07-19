@@ -28,6 +28,18 @@ const counterShow = document.getElementById("counter");
 let score = 0;
 let qLog = 0;
 
+const timerMask = document.getElementById("timerFront");
+const timerBack = document.getElementById("timerBack");
+function resetAnimation() {
+  timerMask.classList.remove("mask");
+  void timerMask.offsetWidth;
+  timerMask.classList.add("mask");
+
+  timerBack.classList.remove("timer");
+  void timerBack.offsetWidth;
+  timerBack.classList.add("timer");
+}
+
 //sets questions and buttons
 
 const checkPosition = function () {
@@ -86,6 +98,7 @@ function countdown() {
     clearInterval(myInterval);
     qLog++;
     counttime = 20;
+    resetAnimation();
     checkPosition();
   }
   timerText.innerText = counttime.toString();
