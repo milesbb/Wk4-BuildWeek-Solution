@@ -135,14 +135,21 @@ function calculatePercentages(finalScore) {
     questions.length.toString();
   let correctPercentage1 =
     ((finalScore * 100) / questions.length).toString() + "%";
+  let precantge = ((finalScore * 100) / questions.length)
   let incorrectPercentage1 =
     (((questions.length - finalScore) * 100) / questions.length).toString() +
     "%";
-
+console.log(precantge)
   incorrectAnswersPercentage.innerText = incorrectPercentage1;
   correctAnswersPercentage.innerText = correctPercentage1;
   amountAnswered1.innerText = correctAnswers + " questions";
   amountUnAnswered1.innerText = incorrectAnswers + " questions";
+
+  let diagramPrecantges = document.getElementsByClassName("pie")[0].style.cssText = "--p: " + precantge.toString()
+
+   
+
+
 
   // if (((finalScore * 100)/questions.length) >= 60) {
   //   congrats1.innerText = "Congratulations!";
