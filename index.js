@@ -126,9 +126,9 @@ function calculatePercentages(finalScore) {
   const incorrectAnswersPercentage = document.getElementById(
     "incorrectPercentage"
   );
-  // const congrats1 = document.getElementById("con_P_in_text");
-  // const congrats2 = document.getElementById("colored_P_in_text");
-  // const congrats3 = document.getElementById("notcoloted_P_in_text");
+  const congrats1 = document.getElementById("con_P_in_text");
+  const congrats2 = document.getElementById("colored_P_in_text");
+  const congrats3 = document.getElementById("notcoloted_P_in_text");
 
   let correctAnswers =
     finalScore.toString() + "/" + questions.length.toString();
@@ -147,16 +147,16 @@ function calculatePercentages(finalScore) {
   amountAnswered1.innerText = correctAnswers + " questions";
   amountUnAnswered1.innerText = incorrectAnswers + " questions";
 
-  // if (((finalScore * 100)/questions.length) >= 60) {
-  //   congrats1.innerText = "Congratulations!";
-  //   congrats2.innerText = "You passed the exam";
-  //   congrats3.innerText = "we will send you the certificate <br />in few minutes. Check your email(including <br />promotion / spam folder)"
-  // } else {
-  //   congrats1.innerText = "Unfortunately";
-  //   congrats2.innerText = "You did not pass the exam";
-  //   congrats3.innerText = "You will be contacted by a teacher <br />in few minutes. Prepare for a meeting <br />next week"
-  // }
-  // console.log("PERCENTAGES CALCULATED");
+  if (((finalScore * 100)/questions.length) >= 60) {
+    congrats1.innerText = "Congratulations!";
+    congrats2.innerText = "You passed the exam";
+    congrats3.innerText = "we will send you the certificate <br />in few minutes. Check your email(including <br />promotion / spam folder)"
+  } else {
+    congrats1.innerText = "Unfortunately";
+    congrats2.innerText = "You did not pass the exam";
+    congrats3.innerText = "You will be contacted by a teacher <br />in few minutes. Prepare for a meeting <br />next week"
+  }
+  console.log("PERCENTAGES CALCULATED");
 }
 
 
