@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Registration</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
+</head>
+<body>
     <div class="logo">
-      <img src="assets/epicode_logo.png" alt="logo" class="logoImg" />
-    </div>
+        <img src="assets/epicode_logo.png" alt="logo" class="logoImg" />
+      </div>
+      <div id="heading">
+        <h1>Registration</h1>
+        <h2>Please write your name down in the filed </h2>
+      </div>
+      <input id="nameInput" type="text" placeholder="Please write your name here" >
 
-    <script src="./index.js"></script>
-  </body>
+      <button onclick="checkInput()" id="submitButton">Submit</button>
+      <script>const checkInput = function(){
+        const input = document.getElementById("nameInput").value;
+        const button = document.getElementById("submitButton");
+        
+        if (input === "") {
+           
+          button.classList.add(".grayout")
+        } else{
+          let name = input
+          localStorage.setItem("name", name)
+          window.location.href="leaderboard.html"
+        }
+      }
+      console.log("something")</script>
+      <script src="index.js"></script>
+</body>
 </html>

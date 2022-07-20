@@ -379,3 +379,78 @@ body {
     -webkit-transform: rotate(-180deg);
   }
 }
+
+
+#nameInput{
+  background: none;
+  height: 40px;
+  width: 50%;
+  font-size: 20px;
+  color: GRAY;
+  border-bottom: 1px solid #d20094;
+  border-left: none;
+  display: block;
+  margin: auto;
+  border-right: none;
+  border-top: none;
+}
+
+
+#submitButton{
+  margin-top: 70px;
+  width: 150px;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 0px #00ffff;
+  transition: box-shadow 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  color: #ebebeb  ;
+}
+
+
+#submitButton:hover{
+  background-color: #00ffff;
+  color: black;
+  border: #00ffff;
+  box-shadow: 0px 0px 0px 0px #00ffff;
+}
+
+.grayout{
+  background-color: gray;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
