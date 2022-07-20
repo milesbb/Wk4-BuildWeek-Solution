@@ -7,12 +7,22 @@
     <title>Leaderboard</title>
     <link rel="stylesheet" href="./styles.css" />
     <style>
+        h1{
+            font-size: 80px;
+            margin: auto;
+        }
        tr{
         outline: solid thin #0ff;
         text-align: center;
        }
        table{
-        width: 800px;
+        width: 900px;
+       }
+       #center{
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        display: grid;
        }
     </style>
   </head>
@@ -20,9 +30,9 @@
     <div class="logo">
       <img src="assets/epicode_logo.png" alt="logo" class="logoImg" />
     </div>
-
     <div id="leaderboardheading"></div>
     <h1>this is a Leaderboard</h1>
+    <div id="center">
     <table id="table">
      <tr>
          <th>#</th>
@@ -30,6 +40,7 @@
          <th>score</th>
      </tr>
     </table>
+    </div>
   <script>
 
 const addingdata = function(number, name, score) {
