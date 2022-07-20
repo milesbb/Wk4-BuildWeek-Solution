@@ -74,8 +74,6 @@ const checkPosition = function () {
 
 checkPosition();
 
-
-
 let correct_answers = new Array();
 for (let i = 0; i < questions.length; i++) {
   correct_answers[i] = questions[i].correctAnswer;
@@ -164,7 +162,6 @@ function calculatePercentages(finalScore) {
   console.log("PERCENTAGES CALCULATED");
 }
 
-
 /*const checkInput = function(){
   const input = document.getElementById("nameInput").value;
   const button = document.getElementById("submitButton");
@@ -180,5 +177,3 @@ function calculatePercentages(finalScore) {
 }
 console.log("something")
 */
-
-
