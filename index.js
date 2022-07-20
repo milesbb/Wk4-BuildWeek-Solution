@@ -22,36 +22,14 @@ const questions = [
 ];
 
 const buttons = document.getElementsByClassName("button");
-let questionT = document.getElementById("question");
-let counterShow = document.getElementById("counter");
+const questionT = document.getElementById("question");
+const counterShow = document.getElementById("counter");
+const counterQuestions = document.getElementById("counterQuestions");
+counterQuestions.innerText = "/" + questions.length.toString();
 
-let score = 0;
+var score = 0;
 let qLog = 0;
 
-const calculatePercentages = function() {
-  const amountAnswered1 = document.getElementById("amountAnswered")
-  const amountUnAnswered1 = document.getElementById("amountUnAnswered")
-  const correctAnswersPercentage = document.getElementById("correctPercentage")
-  const incorrectAnswersPercentage = document.getElementById("incorrectPercentage")
-
-  let correctAnswers = (score.toString() + "/" + questions.length.toString())  
-  let incorrectAnswers = ( questions.length - score).toString() + "/" + questions.length.toString() 
-  let correctPercentage1 = ((score * 100) / questions.length).toString() + "%" ;
-  let incorrectPercentage1  = (((questions.length - score) * 100) / questions.length).toString() + "%" ;
-  
-  incorrectAnswersPercentage.innerText = incorrectPercentage1;
-  correctAnswersPercentage.innerText = correctPercentage1;
-  amountAnswered1.innerText = correctAnswers + " questions";
-  amountUnAnswered1.innerText = incorrectAnswers + " questions";
-} 
-
-
-
-
-window.onload = function(){
-  calculatePercentages()
-}
-  
 const timerMask = document.getElementById("timerFront");
 const timerBack = document.getElementById("timerBack");
 function resetAnimation() {
@@ -68,10 +46,11 @@ function resetAnimation() {
 
 const checkPosition = function () {
   for (let i = 0; i < questions.length; i++) {
-    if (qLog > 4) {
+    console.log(qLog.toString());
+    if (qLog > questions.length - 1) {
+      sessionStorage.setItem("score", score);
       window.location.href = "results.html";
-      console.log(score)
-      calculatePercentages()
+      calculatePercentages(score);
     } else {
       questionT.innerText = questions[qLog].questionText;
       counterShow.innerText = (qLog + 1).toString();
@@ -79,7 +58,7 @@ const checkPosition = function () {
       let rand = Math.floor(Math.random() * 3) + 1;
       allAnswers[rand] = questions[qLog].correctAnswer;
       let count1 = 0;
-      for (let v = 0; v < 4; v++) {
+      for (let v = 0; v < questions.length; v++) {
         if (allAnswers[v] === "") {
           allAnswers[v] = questions[i].incorrectAnswers[count1];
           count1++;
@@ -136,6 +115,29 @@ function startTimer() {
   myInterval = setInterval(countdown, 1000);
 }
 
+function calculatePercentages(finalScore) {
+  const amountAnswered1 = document.getElementById("amountAnswered");
+  const amountUnAnswered1 = document.getElementById("amountUnAnswered");
+  const correctAnswersPercentage = document.getElementById("correctPercentage");
+  const incorrectAnswersPercentage = document.getElementById(
+    "incorrectPercentage"
+  );
+  let correctAnswers =
+    finalScore.toString() + "/" + questions.length.toString();
+  let incorrectAnswers =
+    (questions.length - finalScore).toString() +
+    "/" +
+    questions.length.toString();
+  let correctPercentage1 =
+    ((finalScore * 100) / questions.length).toString() + "%";
+  let incorrectPercentage1 =
+    (((questions.length - finalScore) * 100) / questions.length).toString() +
+    "%";
 
+  incorrectAnswersPercentage.innerText = incorrectPercentage1;
+  correctAnswersPercentage.innerText = correctPercentage1;
+  amountAnswered1.innerText = correctAnswers + " questions";
+  amountUnAnswered1.innerText = incorrectAnswers + " questions";
 
-
+  console.log("PERCENTAGES CALCULATED");
+}

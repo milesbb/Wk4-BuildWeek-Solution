@@ -31,82 +31,107 @@ h2 {
   font-size: 40px;
   margin-top: 0px;
 }
-#heading{
-    position: relative;
-    bottom: 60px;
+
+#heading {
+  position: relative;
+  top: -40px;
+  margin: auto;
+  width: 50%;
+  text-align: center;
 }
-#heading h1{
-   
-    font-weight: 900;
-    font-size: 90px;
-    width: 100%;
-    line-height: 80px;
-    margin-bottom: 0px;
+
+#heading h1 {
+  font-weight: 900;
+  font-size: 60px;
+  width: 100%;
+  line-height: 80px;
+  margin-bottom: 0px;
+  text-align: center;
 }
-#heading h3{
-    margin: 0px;
+
+#heading h3 {
+  margin: 0px;
+  font-size: 30px;
 }
-#correct{
-    display: inline-block;
-    position: relative;
-    right: 400px;
-    font-size: 45px;
-    
+
+.result {
+  align-items: center;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  top: 0px;
 }
-#correctPrecantges {
-    font-weight: 900;
+
+#correct {
+  display: inline-block;
+  position: relative;
+  right: 400px;
+  font-size: 45px;
+  top: 100px;
 }
-#amountAnswerd {
-    font-size: 15px;
+
+#correctPercentages {
+  font-weight: 900;
 }
-#correct p{
-    font-family: 'Roboto', sans-serif;
-    margin: 0px;
-    padding-left: 10px;
+
+#amountAnswered {
+  font-size: 15px;
 }
-#wrong{
-        display: inline-block;
-        position: relative;
-        left:400px;
-        font-size: 45px;
-        margin: 0px;
-        bottom: 130px;
+
+#correct p {
+  font-family: "Roboto", sans-serif;
+  margin: 0px;
+  padding-left: 10px;
 }
-#wrong p{
-    font-family: 'Roboto', sans-serif;
-    margin: 0px;
-    padding-left: 10px;
+
+#wrong {
+  display: inline-block;
+  position: relative;
+  left: 500px;
+  font-size: 45px;
+  margin: 0px;
+  top: -25px;
 }
-#wrongPrecantges {
-    font-weight: 900;
+
+#wrong p {
+  font-family: "Roboto", sans-serif;
+  margin: 0px;
+  padding-left: 10px;
 }
-#amountUnAnswerd {
-    font-size: 15px;
+
+#wrongPercentage {
+  font-weight: 900;
 }
-.rateButton{
-    background-color: transparent;
-    height: 50px;
-    width: 200px;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    border: 1px solid white;
-    font-size: 20px;
-    font-weight: 900;
-    position: relative;
-    right: 83px;
-    box-shadow: 0px 0px 0px 0px #00FFFF;
-    transition: box-shadow 0.3s ease-in-out;
-    cursor: pointer;
-    transition: border 0.3s ease-in-out ;
-    transition: background-color 0.3s ease-in-out;
-    transition: color 0.3s ease-in-out;
-   }
-.rateButton:hover{
-    background-color: #00FFFF;
-    color: black;
-    border: #00FFFF;
-    box-shadow: 0px 0px 0px 0px #00FFFF;
-    
+
+#amountUnAnswered {
+  font-size: 15px;
+}
+
+.rateButton {
+  background-color: transparent;
+  height: 50px;
+  width: 200px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  border: 1px solid white;
+  font-size: 20px;
+  font-weight: 900;
+  position: relative;
+  right: 80px;
+  bottom: -150px;
+  box-shadow: 0px 0px 0px 0px #00ffff;
+  transition: box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  transition: border 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.rateButton:hover {
+  background-color: #00ffff;
+  color: black;
+  border: #00ffff;
+  box-shadow: 0px 0px 0px 0px #00ffff;
 }
 
 ul {
@@ -235,6 +260,12 @@ body {
   display: block;
 }
 
+.logoImg3 {
+  width: 15%;
+  margin-top: 40px;
+  margin-left: 200px;
+}
+
 .logoImg4 {
   width: 15%;
   margin-top: 20px;
@@ -247,15 +278,14 @@ body {
 }
 
 .timerText {
-    font-size: 50px;
-    position: absolute;
-    right: 135px;
-    top: 115px;
-    
+  font-size: 50px;
+  position: absolute;
+  right: 135px;
+  top: 115px;
 }
 
 .timerWrap {
-    text-align: center;
+  text-align: center;
 }
 
 .timer {
