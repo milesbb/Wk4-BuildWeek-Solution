@@ -285,7 +285,7 @@ body {
   display: inline-grid;
   place-content: center;
   top: -100px;
-  --p: 20;
+  --p: 0;
   --b: 30px;
   --c: #00ffff;
 }
