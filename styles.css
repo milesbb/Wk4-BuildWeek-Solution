@@ -118,7 +118,7 @@ h2 {
   font-weight: 900;
   position: relative;
   right: 80px;
-  bottom: -150px;
+  bottom: 100px;
   box-shadow: 0px 0px 0px 0px #00ffff;
   transition: box-shadow 0.3s ease-in-out;
   cursor: pointer;
