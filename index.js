@@ -21,17 +21,19 @@ const questions = [
   },
 ];
 
+
+
+
+
 const buttons = document.getElementsByClassName("button");
 const questionT = document.getElementById("question");
 const counterShow = document.getElementById("counter");
 const counterQuestions = document.getElementById("counterQuestions");
 counterQuestions.innerText = "/" + questions.length.toString();
 
-var score = 0;
-let qLog = 0;
-
 const timerMask = document.getElementById("timerFront");
 const timerBack = document.getElementById("timerBack");
+
 function resetAnimation() {
   timerMask.classList.remove("mask");
   void timerMask.offsetWidth;
@@ -57,6 +59,8 @@ const proceedPagePressed = function () {
 //end proceed button
 
 //sets questions and buttons
+var score = 0;
+var qLog = 0;
 
 const checkPosition = function () {
   for (let i = 0; i < questions.length; i++) {
@@ -136,6 +140,9 @@ function calculatePercentages(finalScore) {
   const incorrectAnswersPercentage = document.getElementById(
     "incorrectPercentage"
   );
+  // const congrats1 = document.getElementById("con_P_in_text");
+  // const congrats2 = document.getElementById("colored_P_in_text");
+  // const congrats3 = document.getElementById("notcoloted_P_in_text");
 
   let correctAnswers =
     finalScore.toString() + "/" + questions.length.toString();
@@ -153,22 +160,18 @@ function calculatePercentages(finalScore) {
   correctAnswersPercentage.innerText = correctPercentage1;
   amountAnswered1.innerText = correctAnswers + " questions";
   amountUnAnswered1.innerText = incorrectAnswers + " questions";
-  console.log("PERCENTAGES CALCULATED");
+
+  // if (((finalScore * 100)/questions.length) >= 60) {
+  //   congrats1.innerText = "Congratulations!";
+  //   congrats2.innerText = "You passed the exam";
+  //   congrats3.innerText = "we will send you the certificate <br />in few minutes. Check your email(including <br />promotion / spam folder)"
+  // } else {
+  //   congrats1.innerText = "Unfortunately";
+  //   congrats2.innerText = "You did not pass the exam";
+  //   congrats3.innerText = "You will be contacted by a teacher <br />in few minutes. Prepare for a meeting <br />next week"
+  // }
+  // console.log("PERCENTAGES CALCULATED");
 }
 
-function loadInnerText() {
-  const congrats1 = document.getElementById("con_P_in_text");
-  const congrats2 = document.getElementById("colored_P_in_text");
-  const congrats3 = document.getElementById("notcoloted_P_in_text");
-  if ((finalScore * 100) / questions.length >= 60) {
-    congrats1.innerText = "Congratulations!";
-    congrats2.innerText = "You passed the exam";
-    congrats3.innerText =
-      "we will send you the certificate in few minutes. Check your email(including promotion / spam folder)";
-  } else if ((finalScore * 100) / questions.length < 60) {
-    congrats1.innerText = "Unfortunately";
-    congrats2.innerText = "You did not pass the exam";
-    congrats3.innerText =
-      "You will be contacted by a teacher in few minutes. Prepare for a meeting <br /> next week";
-  }
-}
+
+
