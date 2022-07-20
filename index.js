@@ -21,10 +21,6 @@ const questions = [
   },
 ];
 
-
-
-
-
 const buttons = document.getElementsByClassName("button");
 const questionT = document.getElementById("question");
 const counterShow = document.getElementById("counter");
@@ -138,6 +134,7 @@ function calculatePercentages(finalScore) {
     questions.length.toString();
   let correctPercentage1 =
     ((finalScore * 100) / questions.length).toString() + "%";
+  let precantge = (finalScore * 100) / questions.length;
   let incorrectPercentage1 =
     (((questions.length - finalScore) * 100) / questions.length).toString() +
     "%";
@@ -147,17 +144,20 @@ function calculatePercentages(finalScore) {
   amountAnswered1.innerText = correctAnswers + " questions";
   amountUnAnswered1.innerText = incorrectAnswers + " questions";
 
-  if (((finalScore * 100)/questions.length) >= 60) {
+  let diagramPrecantges = (document.getElementsByClassName(
+    "pie"
+  )[0].style.cssText = "--p: " + precantge.toString());
+
+  if ((finalScore * 100) / questions.length >= 60) {
     congrats1.innerText = "Congratulations!";
     congrats2.innerText = "You passed the exam";
-    congrats3.innerText = "we will send you the certificate <br />in few minutes. Check your email(including <br />promotion / spam folder)"
+    congrats3.innerText =
+      "we will send you the certificate in few minutes. Check your email(including promotion / spam folder)";
   } else {
     congrats1.innerText = "Unfortunately";
     congrats2.innerText = "You did not pass the exam";
-    congrats3.innerText = "You will be contacted by a teacher <br />in few minutes. Prepare for a meeting <br />next week"
+    congrats3.innerText =
+      "You will be contacted by a teacher in few minutes. Prepare for a meeting next week";
   }
   console.log("PERCENTAGES CALCULATED");
 }
-
-
-
