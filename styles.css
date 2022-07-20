@@ -90,7 +90,7 @@ h2 {
   left: 500px;
   font-size: 45px;
   margin: 0px;
-  top: -25px;
+  top: -320px;
 }
 
 #wrong p {
@@ -275,6 +275,52 @@ body {
 .howGo {
   text-align: center;
   width: 100%;
+}
+
+.pie {
+  --w: 300px;
+  width: var(--w);
+  aspect-ratio: 1;
+  position: relative;
+  display: inline-grid;
+  place-content: center;
+  top: -100px;
+  --p: 20;
+  --b: 30px;
+  --c: #00ffff;
+}
+.pie:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: conic-gradient(var(--c) calc(var(--p) * 1%), #d20094 0);
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    #0000 calc(99% - var(--b)),
+    #000 calc(100% - var(--b))
+  );
+  mask: radial-gradient(
+    farthest-side,
+    #0000 calc(99% - var(--b)),
+    #000 calc(100% - var(--b))
+  );
+}
+#con_P_in_text {
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+}
+#colored_P_in_text {
+  font-size: 12px;
+  color: #00ffff;
+  font-weight: bold;
+}
+#notcoloted_P_in_text {
+  font-size: 8px;
+  color: white;
 }
 
 .timerText {
