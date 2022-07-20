@@ -37,6 +37,7 @@
           This exam will take approx. <span class="bold">0-5 minutes</span>.
         </li>
       </ul>
+      
       <input type="checkbox" class="promiseBox" id="checkbox" />
       <span class="promise bold"
         >I promise to answer myself without help from anyone</span
@@ -46,7 +47,26 @@
     <!-- Checkbox + Proceed -->
 
     <button
-      class="glowBlue proceedPos" id="proceedPagePress" onclick="proceedPagePressed()">PROCEED</button>
+      class="glowBlue proceedPos"
+      id="proceedPagePress"
+      onclick="proceedPagePressed()"
+    >
+      PROCEED
+    </button>
+    <script>
+      // proceed button
+      const checkboxNode = document.getElementById("checkbox");
+      const buttonNode = document.getElementById("proceedPagePress");
+      buttonNode.disabled = true;
+
+      checkboxNode.addEventListener("change", (event) => {
+        buttonNode.disabled = !event.target.checked;
+      });
+      const proceedPagePressed = function () {
+        window.location.href = "questions.html";
+      };
+      //end proceed button
+    </script>
     <script src="./index.js"></script>
   </body>
 </html>
