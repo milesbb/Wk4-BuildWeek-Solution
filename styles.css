@@ -90,7 +90,7 @@ h2 {
   left: 500px;
   font-size: 45px;
   margin: 0px;
-  top: -25px;
+  top: -320px;
 }
 
 #wrong p {
@@ -284,7 +284,7 @@ body {
   position: relative;
   display: inline-grid;
   place-content: center;
-
+  top: -100px;
   --p: 20;
   --b: 30px;
   --c: #00ffff;
@@ -356,6 +356,7 @@ body {
   -webkit-animation: mask calc(var(--duration) * 1s) steps(500, start) infinite;
   -webkit-transform-origin: 100% 50%;
 }
+
 @-webkit-keyframes time {
   100% {
     -webkit-transform: rotate(360deg);
