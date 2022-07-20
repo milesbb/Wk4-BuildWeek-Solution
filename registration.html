@@ -27,10 +27,18 @@
           button.classList.add(".grayout")
         } else{
           let name = input
-          localStorage.setItem("name", name)
+          let leadscore = sessionStorage.getItem("score");
+      leadscore = (leadscore*100)/4;
+      leadscore = leadscore.toFixed();
+      let data = [name, leadscore.toString()]
+      let keyname = localStorage.length.toString();
+      localStorage.setItem(keyname, JSON.stringify(data))
+      
+
           window.location.href="leaderboard.html"
         }
       }
+    
       console.log("something")</script>
       <script src="index.js"></script>
 </body>

@@ -16,7 +16,7 @@
        }
     </style>
   </head>
-  <body>
+  <body onload="createrow();">
     <div class="logo">
       <img src="assets/epicode_logo.png" alt="logo" class="logoImg" />
     </div>
@@ -29,33 +29,39 @@
          <th>person</th>
          <th>score</th>
      </tr>
-    <tr>
-     <td>1</td>
-     <td>first person</td>
-     <td>his score</td>
-    </tr>
     </table>
-  
-    <script src="./index.js">
+  <script>
 
 const addingdata = function(number, name, score) {
 
-        let table= document.getElementById("table");
-        let row = document.createElement("tr");
-        let column1 = document.createElement("td");
-        column1.innerText = number.toString();
-        let column2 = document.createElement("td");
-        column2.innerText = name;
-        let column3 = document.createElement("td");
-        column3.innerText = score;
-        row.appendChild(column1);
-        row.appendChild(column2);
-        row.appendChild(column3);
-        table.appendChild(row);
+let table= document.getElementById("table");
+let row = document.createElement("tr");
+let column1 = document.createElement("td");
+column1.innerText = number.toString();
+let column2 = document.createElement("td");
+column2.innerText = name;
+let column3 = document.createElement("td");
+column3.innerText = score + "%";
+row.appendChild(column1);
+row.appendChild(column2);
+row.appendChild(column3);
+table.appendChild(row);
 }        
+const createrow = function(){
 
 
-let rowname= localStorage.getItem("name")
+for(let i=0; i<localStorage.length;i++){
+let newkey= localStorage.key(i)
+let newdata = localStorage.getItem(newkey)
+let newarray= JSON.parse(newdata)
+console.log(newarray);
+let count = i+1
+addingdata(count,newarray[0],newarray[1])
+}
+}
+  </script>
+    <script src="./index.js">
+
         
     </script>
   </body>
