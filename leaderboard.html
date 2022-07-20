@@ -23,7 +23,7 @@
 
     <div id="leaderboardheading"></div>
     <h1>this is a Leaderboard</h1>
-    <table>
+    <table id="table">
      <tr>
          <th>#</th>
          <th>person</th>
@@ -35,7 +35,27 @@
      <td>his score</td>
     </tr>
     </table>
+  
     <script src="./index.js">
+
+const addingdata = function(number, name, score) {
+
+        let table= document.getElementById("table");
+        let row = document.createElement("tr");
+        let column1 = document.createElement("td");
+        column1.innerText = number.toString();
+        let column2 = document.createElement("td");
+        column2.innerText = name;
+        let column3 = document.createElement("td");
+        column3.innerText = score;
+        row.appendChild(column1);
+        row.appendChild(column2);
+        row.appendChild(column3);
+        table.appendChild(row);
+}        
+
+
+let rowname= localStorage.getItem("name")
         
     </script>
   </body>
