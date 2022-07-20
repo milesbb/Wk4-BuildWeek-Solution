@@ -15,9 +15,23 @@
         <h1>Registration</h1>
         <h2>Please write your name down in the filed </h2>
       </div>
-      <input id="nameInput" type="text" placeholder="place holder" >
+      <input id="nameInput" type="text" placeholder="Please write your name here" >
 
-      <button  id="submitButton">Submit</button>
+      <button onclick="checkInput()" id="submitButton">Submit</button>
+      <script>const checkInput = function(){
+        const input = document.getElementById("nameInput").value;
+        const button = document.getElementById("submitButton");
+        
+        if (input === "") {
+           
+          button.classList.add(".grayout")
+        } else{
+          let name = input
+          localStorage.setItem("name", name)
+          window.location.href="leaderboard.html"
+        }
+      }
+      console.log("something")</script>
       <script src="index.js"></script>
 </body>
 </html>
