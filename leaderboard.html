@@ -7,22 +7,37 @@
     <title>Leaderboard</title>
     <link rel="stylesheet" href="./styles.css" />
     <style>
-      tr {
+        h1{
+            font-size: 100px;
+            margin: auto;
+            
+        }
+       tr{
         outline: solid thin #0ff;
         text-align: center;
-      }
-      table {
-        width: 800px;
-      }
+       }
+       table{
+        width: 900px;
+       }
+       .leaderboard{
+        margin-top: 5%;
+        text-align: center;
+        justify-content: center;
+        display: grid;
+        padding: auto;
+       }
+       .logo{
+        width: 40%;
+       }
     </style>
   </head>
   <body onload="createrow();">
     <div class="logo">
       <img src="assets/epicode_logo.png" alt="logo" class="logoImg" />
     </div>
-
-    <div id="leaderboardheading"></div>
-    <h1>this is a Leaderboard</h1>
+    <div class="leaderboard">
+    <h1>This is a Leaderboard</h1>
+    <div id="center">
     <table id="table">
       <tr>
         <th>#</th>
@@ -30,31 +45,41 @@
         <th>score</th>
       </tr>
     </table>
-    <script>
-      const addingdata = function (number, name, score) {
-        let table = document.getElementById("table");
-        let row = document.createElement("tr");
-        let column1 = document.createElement("td");
-        column1.innerText = number.toString();
-        let column2 = document.createElement("td");
-        column2.innerText = name;
-        let column3 = document.createElement("td");
-        column3.innerText = score + "%";
-        row.appendChild(column1);
-        row.appendChild(column2);
-        row.appendChild(column3);
-        table.appendChild(row);
-      };
-      const createrow = function () {
-        for (let i = 0; i < localStorage.length; i++) {
-          let newkey = localStorage.key(i);
-          let newdata = localStorage.getItem(newkey);
-          let newarray = JSON.parse(newdata);
-          console.log(newarray);
-          let count = i + 1;
-          addingdata(count, newarray[0], newarray[1]);
-        }
-      };
+    </div>
+    </div>
+  <script>
+
+const addingdata = function(number, name, score) {
+
+let table= document.getElementById("table");
+let row = document.createElement("tr");
+let column1 = document.createElement("td");
+column1.innerText = number.toString();
+let column2 = document.createElement("td");
+column2.innerText = name;
+let column3 = document.createElement("td");
+column3.innerText = score + "%";
+row.appendChild(column1);
+row.appendChild(column2);
+row.appendChild(column3);
+table.appendChild(row);
+}        
+const createrow = function(){
+
+
+for(let i=0; i<localStorage.length;i++){
+let newkey= localStorage.key(i)
+let newdata = localStorage.getItem(newkey)
+let newarray= JSON.parse(newdata)
+console.log(newarray);
+let count = i+1
+addingdata(count,newarray[0],newarray[1])
+}
+}
+  </script>
+    <script src="./index.js">
+
+        
     </script>
     <script src="./index.js"></script>
   </body>
