@@ -38,11 +38,7 @@
         padding: auto;
         margin: auto;
       }
-      /* .logo6 {
-        width: 80%;
-        margin-top: 40px;
-        margin-left: 5%;
-      } */
+  
       .logoImg6 {
         width: 15%;
         margin-top: 40px;
@@ -77,67 +73,70 @@
 
 
     </style>
+    <script > </script>
   </head>
-  <body onload="createrow();">
+  <body onload="sortData();">
     <div class="logo">
-      <img src="assets/epicode_logo.png" alt="logo6" class="logoImg6" />
+      <img src="assets/epicode_logo.png" alt="logo" class="logoImg" />
     </div>
-    <div class="leaderboard">
-    <h1>This is a Leaderboard</h1>
-    <div id="center"> 
+
+    <div id="leaderboardheading"></div>
+    <h1>Leaderboard</h1>
     <table id="table">
-      <tr class="animate">
-        <th>#</th>
-        <th>person</th>
-        <th>score</th>
-      </tr>
+     <tr>
+         <th>#</th>
+         <th>person</th>
+         <th>score</th>
+     </tr>
     </table>
-    </div>
-    <script>
-      const addingdata = function (number, name, score) {
-        let table = document.getElementById("table");
-        let row = document.createElement("tr");
-        let column1 = document.createElement("td");
-        column1.innerText = number.toString();
-        let column2 = document.createElement("td");
-        column2.innerText = name;
-        let column3 = document.createElement("td");
-        column3.innerText = score + "%";
-        row.appendChild(column1);
-        row.appendChild(column2);
-        row.appendChild(column3);
-        table.appendChild(row);
-      };
-      const createrow = function () {
-        for (let i = 0; i < localStorage.length; i++) {
-          let newkey = localStorage.key(i);
-          let newdata = localStorage.getItem(newkey);
-          let newarray = JSON.parse(newdata);
-          console.log(newarray);
-          let count = i + 1;
-          addingdata(count, newarray[0], newarray[1]);
-        }
-      };
+  <script>
 
-      var list = document.getElementById("table");
+const addingdata = function(number, name, score) {
 
-      var nodesToSort = list.querySelectorAll(".scores");
+  
+let table= document.getElementById("table");
+let row = document.createElement("tr");
+let column1 = document.createElement("td");
+column1.innerText = number.toString();
+let column2 = document.createElement("td");
+column2.innerText = name;
+let column3 = document.createElement("td");
+column3.innerText = score.toString() + "%";
+column3.classList.add("scoreClass")
+row.classList.add("rowClass")
 
-      Array.prototype.map
-        .call(nodesToSort, function (node) {
-          return {
-            node: node,
-            relevantText: node.querySelector("td").textContent,
-          };
-        })
-        .sort(function (a, b) {
-          return a.relevantText.localeCompare(b.relevantText);
-        })
-        .forEach(function (item) {
-          list.appendChild(item.node);
-        });
+row.appendChild(column1);
+row.appendChild(column2);
+row.appendChild(column3);
+table.appendChild(row);
+}
+
+function sortData(){
+  let dataobject = new Array();
+  for(let i =0 ; i < localStorage.length ; i++){
+    dataobject[i] = new Object();
+  }
+for(let i =0 ; i < localStorage.length; i++){
+let newkey1= localStorage.key(i)
+let newdata1 = localStorage.getItem(newkey1)
+let newarray1= JSON.parse(newdata1)
+dataobject[i].name = newarray1[0]
+dataobject[i].score = newarray1[1]
+}
+dataobject.sort((a,b) =>{
+ return  b.score - a.score
+} )
+for(let i = 0 ; i < dataobject.length; i++){
+  let count = i+1
+  addingdata(count,dataobject[i].name,dataobject[i].score)
+}
+console.log(dataobject)
+}
+
+  </script>
+    <script src="./index.js">
+
+        
     </script>
-    <script src="./index.js"></script>
-    <script src="./index.js"></script>
   </body>
 </html>
