@@ -1,24 +1,62 @@
 const questions = [
   {
-    questionText: "Which one says dog? (q1 test)",
-    correctAnswer: "dog",
-    incorrectAnswers: ["cat", "cat", "cat"],
+    questionText: "What does CPU stand for?",
+    correctAnswer: "Central Processing Unit",
+    incorrectAnswers: [
+      "Central Process Unit",
+      "Computer Personal Unit",
+      "Central Processor Unit",
+    ],
   },
   {
-    questionText: "Which one says dog? (q2 test)",
-    correctAnswer: "dog",
-    incorrectAnswers: ["cat", "cat", "cat"],
+    questionText: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
+    correctAnswer: "Final",
+    incorrectAnswers: ["Static", "Private", "Public"],
   },
   {
-    questionText: "Which one says dog? (q3 test)",
-    correctAnswer: "dog",
-    incorrectAnswers: ["cat", "cat", "cat"],
+    questionText: "What is the most preferred image format used for logos in the Wikimedia database?",
+    correctAnswer: ".svg",
+    incorrectAnswers: [".png", ".jpeg", ".gif"],
   },
   {
-    questionText: "Which one says dog? (q4 test)",
-    correctAnswer: "dog",
-    incorrectAnswers: ["cat", "cat", "cat"],
+    questionText: "In web design, what does CSS stand for?",
+    correctAnswer: "Cascading Style Sheet",
+    incorrectAnswers: [
+      "Counter Strike: Source",
+      "Corrective Style Sheet",
+      "Computer Style Sheet",
+    ],
   },
+  {
+    questionText: "What is the code name for the mobile operating system Android 7.0?",
+    correctAnswer: "Nougat",
+    incorrectAnswers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
+  },
+  {
+    questionText: "On Twitter, what is the character limit for a Tweet?",
+    correctAnswer: "140",
+    incorrectAnswers: ["120", "160", "100"],
+  },
+  {
+    questionText: "Which programming language shares its name with an island in Indonesia?",
+    correctAnswer: "Java",
+    incorrectAnswers: ["Python", "C", "Jakarta"],
+  },
+  {
+    questionText: "Dennis M. Ritchie, an employee of AT&T, came up with which single letter computer programming language?",
+    correctAnswer: "C",
+    incorrectAnswers: ["X", "R", "J"],
+  },
+  {
+    questionText: "What is the name of the language that was named after a famous French mathematician?",
+    correctAnswer: "Pascal",
+    incorrectAnswers: ["Euler", "Decartes", "Gauss"],
+  },
+  {
+    questionText: "Which corporation released Visual Basic?",
+    correctAnswer: "Microsoft",
+    incorrectAnswers: ["Oracle", "Nokia", "Motorola"],
+  }
 ];
 
 const buttons = document.getElementsByClassName("button");
@@ -60,12 +98,12 @@ const checkPosition = function () {
       let count1 = 0;
       for (let v = 0; v < questions.length; v++) {
         if (allAnswers[v] === "") {
-          allAnswers[v] = questions[i].incorrectAnswers[count1];
+          allAnswers[v] = questions[qLog].incorrectAnswers[count1];
           count1++;
         }
       }
-      for (let i = 0; i < buttons.length; i++) {
-        buttons[i].value = allAnswers[i];
+      for (let x = 0; x < buttons.length; x++) {
+        buttons[x].value = allAnswers[x];
       }
     }
   }
@@ -152,7 +190,7 @@ function calculatePercentages(finalScore) {
     congrats1.innerText = "Congratulations!";
     congrats2.innerText = "You passed the exam";
     congrats3.innerText =
-      "we will send you the certificate in few minutes. Check your email(including promotion / spam folder)";
+      "We will send you the certificate in few minutes. Check your email (including promotion / spam folder)";
   } else {
     congrats1.innerText = "Unfortunately";
     congrats2.innerText = "You did not pass the exam";
