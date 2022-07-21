@@ -219,6 +219,15 @@ body {
   margin-right: 20px;
   color: white;
   font-size: 22px;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.button:hover {
+  background-color: #d20094;
+}
+
+.button:active {
+  background-color: #86005e;
 }
 
 .qWrap {
@@ -237,8 +246,9 @@ body {
 }
 
 .questionText {
-  font-size: 65px;
+  font-size: 30px;
   text-align: center;
+  line-height: 33px;
   margin: auto;
   margin-bottom: 50px;
 }
@@ -307,27 +317,41 @@ body {
   );
 }
 #con_P_in_text {
-  font-size: 12px;
+  font-size: 20px;
   color: white;
   font-weight: bold;
   margin-left: auto;
   margin-right: auto;
 }
 #colored_P_in_text {
-  font-size: 12px;
+  font-size: 16px;
   color: #00ffff;
   font-weight: bold;
 }
 #notcoloted_P_in_text {
-  font-size: 8px;
+  font-size: 10px;
   color: white;
+  width: 70%;
+  margin: auto;
 }
 
 .timerText {
   font-size: 50px;
   position: absolute;
-  right: 135px;
+  right: 0%;
   top: 115px;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+
+.timerWrap2 {
+  margin: 0;
+  right: -82.5%;
+  top: -265px;
+  text-align: center;
+  width: 10%;
+  position: relative;
 }
 
 .timerWrap {
@@ -340,7 +364,8 @@ body {
   height: calc(var(--size) * 1px);
   width: calc(var(--size) * 1px);
   position: relative;
-  right: -1200px;
+  /* right: -1200px; */
+  right: -83.2%;
   top: -50px;
   -webkit-animation: time calc(var(--duration) * 1s) steps(1000, start) infinite;
   -webkit-mask: radial-gradient(transparent 50%, #000 50%);
@@ -411,6 +436,7 @@ body {
   transition: background-color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
   color: #ebebeb  ;
+  border: 1px solid white;
 }
 
 

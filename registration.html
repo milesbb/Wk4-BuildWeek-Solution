@@ -1,45 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Registration</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="logo">
-        <img src="assets/epicode_logo.png" alt="logo" class="logoImg" />
-      </div>
-      <div id="heading">
-        <h1>Registration</h1>
-        <h2>Please write your name down in the filed </h2>
-      </div>
-      <input id="nameInput" type="text" placeholder="Please write your name here" >
+      <img src="assets/epicode_logo.png" alt="logo" class="logoImg" />
+    </div>
+    <div id="heading">
+      <h1>Registration</h1>
+      <h2>Please enter your name</h2>
+    </div>
+    <input id="nameInput" type="text" placeholder="Write your name here" />
 
-      <button onclick="checkInput()" id="submitButton">Submit</button>
-      <script>const checkInput = function(){
+    <!-- <button
+      id="submitButton"
+      onclick="window.location.href='questions.html; checkInput();'"
+    >
+      Submit
+    </button> -->
+
+    <button onclick="submission()" id="submitButton">Submit</button>
+    <script>
+      function submission() {
         const input = document.getElementById("nameInput").value;
         const button = document.getElementById("submitButton");
-        
-        if (input === "") {
-           
-          button.classList.add(".grayout")
-        } else{
-          let name = input
-          let leadscore = sessionStorage.getItem("score");
-      leadscore = (leadscore*100)/4;
-      leadscore = leadscore.toFixed();
-      let data = [name, leadscore.toString()]
-      let keyname = localStorage.length.toString();
-      localStorage.setItem(keyname, JSON.stringify(data))
-      
 
-          window.location.href="leaderboard.html"
+        if (input === "") {
+          button.classList.add(".grayout");
+        } else {
+          let name = input;
+          let leadscore = sessionStorage.setItem("name", name);
+          
+          window.location.href = "questions.html";
         }
       }
-    
-      console.log("something")</script>
-      <script src="index.js"></script>
-</body>
+
+      //   const checkInput = function () {
+      //     const input = document.getElementById("nameInput").value;
+      //     const button = document.getElementById("submitButton");
+
+      //     if (input === "") {
+      //       button.classList.add(".grayout");
+      //     } else {
+      //       let name = input;
+      //       let leadscore = sessionStorage.getItem("score");
+      //       leadscore = (leadscore * 100) / 10;
+      //       leadscore = leadscore.toFixed();
+      //       let data = [name, leadscore.toString()];
+      //       let keyname = localStorage.length.toString();
+      //       localStorage.setItem(keyname, JSON.stringify(data));
+
+      //       window.location.href = "questions.html";
+      //     }
+      //   };
+    </script>
+    <script src="index.js"></script>
+  </body>
 </html>

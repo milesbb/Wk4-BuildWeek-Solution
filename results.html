@@ -45,9 +45,28 @@
         <div id="amountUnAnswered">placeholder</div>
       </div>
 
-      <button class="rateButton" onclick="window.location.href='feedback.html'">
+      <!-- <button
+        class="rateButton"
+        id="SubButton"
+        onclick="window.location.href='feedback.html'"
+      >
         RATE US
-      </button>
+      </button> -->
+
+      <button onclick="checkInput()" class="rateButton">Rate Us!</button>
+      <script>
+        const checkInput = function () {
+          let name = sessionStorage.getItem("name");
+          let leadscore = sessionStorage.getItem("score");
+          leadscore = (leadscore * 100) / 10;
+          leadscore = leadscore.toFixed();
+          let data = [name, leadscore.toString()];
+          let keyname = localStorage.length.toString();
+          localStorage.setItem(keyname, JSON.stringify(data));
+
+          window.location.href = "feedback.html";
+        };
+      </script>
     </div>
     <script src="./index.js"></script>
   </body>
