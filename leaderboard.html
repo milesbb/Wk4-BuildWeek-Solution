@@ -13,11 +13,22 @@
             
         }
        tr{
-        outline: solid thin #0ff;
+        outline: solid thin #00ffff;
         text-align: center;
        }
        table{
         width: 900px;
+         font-family: 'Syncopate', sans-serif;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    color: black;
+    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0, #00ffff), color-stop(0.76, #00ffff));
+    background-image: -o-linear-gradient(left top, #d20094 10%, #00ffff 90%);
+    background-image: -moz-linear-gradient(left top, #d20094 10%, #00ffff 90%);
+    background-image: -webkit-linear-gradient(left top, #d20094 10%, #00ffff 90%);
+    background-image: -ms-linear-gradient(left top, #d20094 10%, #00ffff 90%);
+    background-image: linear-gradient(to left top, #d20094 10%, #00ffff 90%);
        }
        .leaderboard{
         margin-top: 5%;
@@ -29,6 +40,51 @@
        .logo{
         width: 40%;
        }
+
+
+
+
+       /* this is a added part for animation */
+       @import url(http://fonts.googleapis.com/css?family=Black+Ops+One);
+@import url(http://fonts.googleapis.com/css?family=Orbitron:700);
+@import url(http://fonts.googleapis.com/css?family=Syncopate:700);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+ 
+
+
+
+
+
+
+.animate {
+    -moz-animation: flashIt 1s linear 1;
+    -webkit-animation: glowIt 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes flashIt {
+    100% { opacity: 0.2; }
+}
+@keyframes flashIt {
+    100% { opacity: 0.2; }
+}
+
+@-webkit-keyframes glowIt {
+    100% { color: #fff; text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff; }
+}
+
+.second {
+    -webkit-transition: 2s linear 3s;
+    color: #ff0;
+    text-shadow: -1px 1px 8px #fff, 1px -1px 8px black;
+}
+
+
+/* end of added part */
+
+
+
+
+
     </style>
   </head>
   <body onload="createrow();">
@@ -37,9 +93,9 @@
     </div>
     <div class="leaderboard">
     <h1>This is a Leaderboard</h1>
-    <div id="center">
+    <div id="center"> 
     <table id="table">
-      <tr>
+      <tr class="animate">
         <th>#</th>
         <th>person</th>
         <th>score</th>
