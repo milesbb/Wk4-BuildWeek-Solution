@@ -33,30 +33,25 @@
        .leaderboard{
         margin-top: 5%;
         text-align: center;
-        justify-content: center;
+        justify-items: center;
         display: grid;
         padding: auto;
-       }
-       .logo{
-        width: 40%;
-       }
+        margin: auto;
+      }
+      /* .logo6 {
+        width: 80%;
+        margin-top: 40px;
+        margin-left: 5%;
+      } */
+      .logoImg6 {
+        width: 15%;
+        margin-top: 40px;
+        margin-left: 5%;
+      }
 
 
-
-
-       /* this is a added part for animation */
-       @import url(http://fonts.googleapis.com/css?family=Black+Ops+One);
-@import url(http://fonts.googleapis.com/css?family=Orbitron:700);
-@import url(http://fonts.googleapis.com/css?family=Syncopate:700);
-@import url(http://fonts.googleapis.com/css?family=Raleway);
- 
-
-
-
-
-
-
-.animate {
+      /* this is animation */
+      .animate {
     -moz-animation: flashIt 1s linear 1;
     -webkit-animation: glowIt 1s ease-in-out infinite alternate;
 }
@@ -78,18 +73,14 @@
     text-shadow: -1px 1px 8px #fff, 1px -1px 8px black;
 }
 
-
-/* end of added part */
-
-
-
+ /* end of this is animation part           */
 
 
     </style>
   </head>
   <body onload="createrow();">
     <div class="logo">
-      <img src="assets/epicode_logo.png" alt="logo" class="logoImg" />
+      <img src="assets/epicode_logo.png" alt="logo6" class="logoImg6" />
     </div>
     <div class="leaderboard">
     <h1>This is a Leaderboard</h1>
@@ -102,41 +93,51 @@
       </tr>
     </table>
     </div>
-    </div>
-  <script>
+    <script>
+      const addingdata = function (number, name, score) {
+        let table = document.getElementById("table");
+        let row = document.createElement("tr");
+        let column1 = document.createElement("td");
+        column1.innerText = number.toString();
+        let column2 = document.createElement("td");
+        column2.innerText = name;
+        let column3 = document.createElement("td");
+        column3.innerText = score + "%";
+        row.appendChild(column1);
+        row.appendChild(column2);
+        row.appendChild(column3);
+        table.appendChild(row);
+      };
+      const createrow = function () {
+        for (let i = 0; i < localStorage.length; i++) {
+          let newkey = localStorage.key(i);
+          let newdata = localStorage.getItem(newkey);
+          let newarray = JSON.parse(newdata);
+          console.log(newarray);
+          let count = i + 1;
+          addingdata(count, newarray[0], newarray[1]);
+        }
+      };
 
-const addingdata = function(number, name, score) {
+      var list = document.getElementById("table");
 
-let table= document.getElementById("table");
-let row = document.createElement("tr");
-let column1 = document.createElement("td");
-column1.innerText = number.toString();
-let column2 = document.createElement("td");
-column2.innerText = name;
-let column3 = document.createElement("td");
-column3.innerText = score + "%";
-row.appendChild(column1);
-row.appendChild(column2);
-row.appendChild(column3);
-table.appendChild(row);
-}        
-const createrow = function(){
+      var nodesToSort = list.querySelectorAll(".scores");
 
-
-for(let i=0; i<localStorage.length;i++){
-let newkey= localStorage.key(i)
-let newdata = localStorage.getItem(newkey)
-let newarray= JSON.parse(newdata)
-console.log(newarray);
-let count = i+1
-addingdata(count,newarray[0],newarray[1])
-}
-}
-  </script>
-    <script src="./index.js">
-
-        
+      Array.prototype.map
+        .call(nodesToSort, function (node) {
+          return {
+            node: node,
+            relevantText: node.querySelector("td").textContent,
+          };
+        })
+        .sort(function (a, b) {
+          return a.relevantText.localeCompare(b.relevantText);
+        })
+        .forEach(function (item) {
+          list.appendChild(item.node);
+        });
     </script>
+    <script src="./index.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
