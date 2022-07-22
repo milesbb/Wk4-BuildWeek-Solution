@@ -17,13 +17,6 @@
     </div>
     <input id="nameInput" type="text" placeholder="Write your name here" />
 
-    <!-- <button
-      id="submitButton"
-      onclick="window.location.href='questions.html; checkInput();'"
-    >
-      Submit
-    </button> -->
-
     <button onclick="submission()" id="submitButton">Submit</button>
     <script>
       function submission() {
@@ -39,25 +32,6 @@
           window.location.href = "questions.html";
         }
       }
-
-      //   const checkInput = function () {
-      //     const input = document.getElementById("nameInput").value;
-      //     const button = document.getElementById("submitButton");
-
-      //     if (input === "") {
-      //       button.classList.add(".grayout");
-      //     } else {
-      //       let name = input;
-      //       let leadscore = sessionStorage.getItem("score");
-      //       leadscore = (leadscore * 100) / 10;
-      //       leadscore = leadscore.toFixed();
-      //       let data = [name, leadscore.toString()];
-      //       let keyname = localStorage.length.toString();
-      //       localStorage.setItem(keyname, JSON.stringify(data));
-
-      //       window.location.href = "questions.html";
-      //     }
-      //   };
     </script>
     <script src="index.js"></script>
   </body>
