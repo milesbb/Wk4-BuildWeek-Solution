@@ -17,6 +17,10 @@
             width: 50%;
             padding: 5%; */
       /* } */
+      .bluecolor{
+        color:#00ffff;
+
+      }
 
       .checked {
         color: orange;
@@ -31,14 +35,23 @@
       #comments {
         border-width: 0 0 1px;
       }
+      .box a:checked{
+        color: #00ffff;
+      }
 
+      .b0:checked{
+        color: #00ffff;
+      }
       .box {
         margin: auto;
         direction: rtl;
       }
       .box a {
         font-size: 40px;
-        color: #23284e;
+       
+      }
+      .defaultcolor{
+      color: #23284e;
         transition: 0.3s all;
       }
       .box a:hover {
@@ -52,6 +65,7 @@
       }
       .b2:hover ~ a {
         color: #00ffff;
+        
       }
       .b3:hover ~ a {
         color: #00ffff;
@@ -74,6 +88,7 @@
       .b9:hover ~ a {
         color: #00ffff;
       }
+     
       input {
         background: none;
         height: 40px;
@@ -87,7 +102,7 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="seeing()" >
     <div class="logo4">
       <img src="assets/epicode_logo.png" alt="logo" class="logoImg4" />
     </div>
@@ -95,21 +110,60 @@
       <h1 class="howGo">Tell us how it's going</h1>
       <h3>From 0 to 10, how likely are you to recommend</h3>
       <div class="box">
-        <a class="ion-android-star b0"></a>
-        <a class="ion-android-star b1"></a>
-        <a class="ion-android-star b2"></a>
-        <a class="ion-android-star b3"></a>
-        <a class="ion-android-star b4"></a>
-        <a class="ion-android-star b5"></a>
-        <a class="ion-android-star b6"></a>
-        <a class="ion-android-star b7"></a>
-        <a class="ion-android-star b8"></a>
-        <a class="ion-android-star b9"></a>
+        <a class="ion-android-star b0 defaultcolor"></a>
+        <a class="ion-android-star b1 defaultcolor"></a>
+        <a class="ion-android-star b2 defaultcolor"></a>
+        <a class="ion-android-star b3 defaultcolor"></a>
+        <a class="ion-android-star b4 defaultcolor"></a>
+        <a class="ion-android-star b5 defaultcolor"></a>
+        <a class="ion-android-star b6 defaultcolor"></a>
+        <a class="ion-android-star b7 defaultcolor"></a>
+        <a class="ion-android-star b8 defaultcolor"></a>
+        <a class="ion-android-star b9 defaultcolor"></a>
       </div>
       <h3>Leave us an open feedback about your experience so far</h3>
       <input id="comments" placeholder="Write your comment" />
       <button id="moreinfo" class="glowBlue" onclick="window.location.href='leaderboard.html'">MORE INFO</button>
     </div>
+    <script>
+      const seeing =function() {
+      const allstars= document.querySelectorAll('.ion-android-star')
+      
+       console.log(allstars)
+       allstars.forEach((star, i)=> {
+        star.onclick = function(){
+          let current_star_level= 10-i;
+          console.log(current_star_level)
+          let count = 9
+
+          for(let v=0;v<10;v++){
+              allstars[v].classList.remove("bluecolor")
+              allstars[v].classList.add("defaultcolor")
+          }
+
+
+
+          for(let v=0;v<current_star_level;v++){
+
+           allstars[count].classList.remove("defaultcolor")
+            allstars[count].classList.add("bluecolor")
+            console.log(count)
+            count--;
+          }
+
+
+          }
+          }
+       )
+
+
+
+          
+          console.log(star);
+          console.log(10-i)
+          }
+       
+    </script>
 
     <script src="./index.js"></script>
   </body>
