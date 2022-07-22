@@ -11,6 +11,7 @@
     <div class="logo">
       <img src="assets/epicode_logo.png" alt="logo" class="logoImg" />
     </div>
+
     <div id="heading">
       <h1>Registration</h1>
       <h2>Please enter your name</h2>
@@ -18,6 +19,7 @@
     <input id="nameInput" type="text" placeholder="Write your name here" />
 
     <button onclick="submission()" id="submitButton">Submit</button>
+
     <script>
       function submission() {
         const input = document.getElementById("nameInput").value;
@@ -28,11 +30,12 @@
         } else {
           let name = input;
           let leadscore = sessionStorage.setItem("name", name);
-          
+
           window.location.href = "questions.html";
         }
       }
     </script>
+
     <script src="index.js"></script>
   </body>
 </html>

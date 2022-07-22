@@ -9,12 +9,14 @@ const questions = [
     ],
   },
   {
-    questionText: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
+    questionText:
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correctAnswer: "Final",
     incorrectAnswers: ["Static", "Private", "Public"],
   },
   {
-    questionText: "What is the most preferred image format used for logos in the Wikimedia database?",
+    questionText:
+      "What is the most preferred image format used for logos in the Wikimedia database?",
     correctAnswer: ".svg",
     incorrectAnswers: [".png", ".jpeg", ".gif"],
   },
@@ -28,7 +30,8 @@ const questions = [
     ],
   },
   {
-    questionText: "What is the code name for the mobile operating system Android 7.0?",
+    questionText:
+      "What is the code name for the mobile operating system Android 7.0?",
     correctAnswer: "Nougat",
     incorrectAnswers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
   },
@@ -38,17 +41,20 @@ const questions = [
     incorrectAnswers: ["120", "160", "100"],
   },
   {
-    questionText: "Which programming language shares its name with an island in Indonesia?",
+    questionText:
+      "Which programming language shares its name with an island in Indonesia?",
     correctAnswer: "Java",
     incorrectAnswers: ["Python", "C", "Jakarta"],
   },
   {
-    questionText: "Dennis M. Ritchie, an employee of AT&T, came up with which single letter computer programming language?",
+    questionText:
+      "Dennis M. Ritchie, an employee of AT&T, came up with which single letter computer programming language?",
     correctAnswer: "C",
     incorrectAnswers: ["X", "R", "J"],
   },
   {
-    questionText: "What is the name of the language that was named after a famous French mathematician?",
+    questionText:
+      "What is the name of the language that was named after a famous French mathematician?",
     correctAnswer: "Pascal",
     incorrectAnswers: ["Euler", "Decartes", "Gauss"],
   },
@@ -56,7 +62,7 @@ const questions = [
     questionText: "Which corporation released Visual Basic?",
     correctAnswer: "Microsoft",
     incorrectAnswers: ["Oracle", "Nokia", "Motorola"],
-  }
+  },
 ];
 
 const buttons = document.getElementsByClassName("button");
@@ -199,19 +205,3 @@ function calculatePercentages(finalScore) {
   }
   console.log("PERCENTAGES CALCULATED");
 }
-
-/*const checkInput = function(){
-  const input = document.getElementById("nameInput").value;
-  const button = document.getElementById("submitButton");
-  
-  if (input === "") {
-     
-    button.classList.add(".grayout")
-  } else{
-    let name = input
-    localStorage.setItem("name", name)
-    window.location.href="leaderboard.html"
-  }
-}
-console.log("something")
-*/
